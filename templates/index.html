@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>Jaipur National Univerity </title>
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/bootstrap.css" type="text/css" rel="stylesheet">
+    
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/animate.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/loader.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/global.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/main.css" media="all" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/responsive.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/font-awesome.min.css">
+    <style>
+      body {
+        background: transparent;
+      }
+
+      /* ---------------------------------------------------------------------- */
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      span.input-icon,
+      span.input-help {
+        display: block;
+        position: relative;
+      }
+
+      .input-icon>input {
+        padding-left: 25px;
+        padding-right: 6px;
+      }
+
+      body {
+        color: #333;
+        direction: ltr;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        padding: 0;
+        margin: 0;
+        background: #ffffff;
+      }
+
+      .no-display {
+        display: none;
+      }
+
+      .form-group {
+        position: relative;
+      }
+
+      .input-icon>[class*="fa-"],
+      .input-icon>[class*="clip-"] {
+        bottom: 0;
+        color: #909090;
+        display: inline-block;
+        font-size: 14px;
+        left: 5px;
+        line-height: 35px;
+        padding: 0 3px;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+      }
+
+      /*  Login
+        /* ---------------------------------------------------------------------- */
+      body.login {
+        height: 100%;
+        overflow: visible;
+      }
+
+      body.login {
+        background-image: url("https://univ.jnujaipur.ac.in/loginpageContent/assets/img/big/auth-bg2.jpg");
+        background-color: #def3ed;
+        background-size: cover;
+          background-repeat: no-repeat;
+		
+      }
+
+      body.login .main-login {
+        position: relative;
+      }
+
+   body.login .box-forgot {
+  
+    padding: 0;
+    top: 170px;
+    margin-left: 38px;
+    margin-right: 20px;
+}
+.box-forgot{
+    
+    margin: 1px 75px 0px 0px;
+    
+}
+      body.login .box-login,
+      body.login .box-forgot,
+      body.login .box-register {
+          display: none;
+      }
+        body.login .box-login {
+          display: block;
+        }
+
+      body.login .form fieldset {
+        border: none;
+        margin: 0;
+        padding: 10px 0 0;
+      }
+
+      body.login input.password {
+        padding-right: 130px;
+      }
+
+      body.login label {
+        color: #010101;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      body.login .copyright {
+        font-size: 11px;
+        margin: 0 auto;
+        padding: 10px 10px 0;
+        text-align: center;
+      }
+
+      body.login .form-actions:before,
+      body.login .form-actions:after {
+        content: "";
+        display: table;
+        line-height: 0;
+      }
+
+      body.login .form-actions:after {
+        clear: both;
+      }
+
+      body.login .form-actions {
+        margin-top: 15px;
+        padding-top: 10px;
+        display: block;
+      }
+
+      body.login .new-account {
+        border-top: 1px dotted #EEEEEE;
+        margin-top: 15px;
+        padding-top: 10px;
+        display: block;
+      }
+
+      .btn-green {
+        background-color: #0050EF;
+        border-color: #2C5FDD;
+        color: white;
+      }
+
+      .btn-green:hover,
+      .btn-green:focus,
+      .btn-green:active,
+      .btn-green.active {
+        background-color: #F0A30A;
+        border-color: #F0A30A;
+        color: white;
+      }
+
+      .form-forgot.login-form {
+        box-shadow: none;
+        padding: 15px;
+      }
+.box-forgot {
+    border-radius: 5px;
+	
+}
+      .change-header {
+      
+        padding: 10px 15px;
+      }
+
+      .change-header h2 {
+        margin: 0;
+        font-size: 22px;
+        color: #fff;
+		text-align:center;
+      }
+
+      #hidingScrollBar {
+        overflow: hidden;
+      }
+
+      .hideScrollBar {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        margin-right: 14px;
+        padding-right: 28px;
+        /*This would hide the scroll bar of the right. To be sure we hide the scrollbar on every browser, increase this value*/
+        padding-bottom: 15px;
+        /*This would hide the scroll bar of the bottom if there is one*/
+      }
+
+      #login-banner {
+        margin-top: 0px;
+        z-index: 9;
+      }
+
+      label {
+        padding: 0;
+        margin-bottom: 5px;
+      }
+
+      .acert-notifications {
+        background: #fff;
+        padding: 100px 10px;
+        font-size: 20px;
+        width: 360px;
+        height: 468px;
+      }
+
+      .owl-controls .owl-pagination {
+        text-align: center;
+        padding: 15px 0;
+      }
+
+      .owl-controls .owl-pagination .owl-page {
+        width: 15px;
+        height: 15px;
+        background: #f0a30a;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 5px;
+        cursor: pointer;
+        border: 2px solid #fff;
+      }
+
+      .owl-controls .owl-pagination .owl-page.active {
+        background: #f00;
+      }
+
+      .registration-txt {
+        background: #3399ff;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 28px;
+        margin-top: 16px;
+        line-height: 31px;
+        font-weight: bold;
+      }
+
+      .online-txt {
+        background: #ff9933;
+        color: #fff;
+        margin-top: 10px;
+        padding: 5px 10px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+div#login-page {
+    overflow: hidden;
+}
+   
+    
+      .logo-img {
+        display: flex;
+        padding-left: 200px;
+      }
+
+      .logo-img-1 {
+        flex: 33.33%;
+        padding: 5px;
+      }
+
+
+
+    </style>
+  </head>
+  <body id="login-page" class="login">
+  <div class="logojaipur">
+	<img src="https://univ.jnujaipur.ac.in/loginpageContent/assets/img/jnu-logo.png" alt="The Last of us" style="width: 8%;MARGIN:4PX;">
+	</div>
+    <div class="MainDiv" id="login-page">
+	
+      <div class="content">
+        <div class="main-login">
+          <div class="row">
+            <div class="portasection">
+              <div class="col-sm-8 col-md-8 col-xl-8">
+                <div id="login">
+                  
+                 <div class="texttrans">
+                  <h2 style=" text-shadow: 1px 1px #d4d4d4;">Welcome To The Jaipur National University</h2>
+                  <p>An exceptional user friendly platform which offers an online connection between all the stake holders of the university. Based on enterprising web portal technology, it truly automates various administrative and academic processes of university by reducing the communication distance by providing 24X7 accessibility through its various useful features.</P> 
+				  
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-4 col-xl-4">
+		
+
+       
+              <div class="box-login">
+                <form action="/account/login" method="POST" id="login-form" autocomplete="off" class="login-form">
+
+				                <input id="ReturnUrl" name="ReturnUrl" type="hidden" value="" />
+                <input name="__RequestVerificationToken" type="hidden" value="0BQVqH-sPQmefCbSavBdVS7vh3dIaUkzlyB_cSsUs8zvyFmbZ4eydSDRglblRyUC2zmzvbl1zQXrPmxhWy0qndronXvCdSYopziRsY7BEw01" />
+                  <div class="formtxt-wrapper">
+                  
+					<div class="formlogo" style="display:none">
+					<img src="https://univ.jnujaipur.ac.in/loginpageContent/assets/img/jnu-logo.png" alt="The Last of us" style="width: 100%;">
+					</div>
+                    <div class="form-group">
+					
+                      <label class="form-label" for="username">User ID</label>
+                      <div class="input-group">
+                        <input id="username" name="email" class="input-box" type="text" placeholder="Enter your Username/E-mail/Login id" autocomplete="off" required>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                      </div>
+                    </div>
+					
+                    <div class="form-group">
+                      <label class="form-label" for="password">Password</label>
+                      <div class="input-group">
+                        <input id="password" name="password" class="input-box" type="password" placeholder="Enter Password" required autocomplete="off">
+                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div class="text-center submit-btn" style="padding: 10px;">
+                      <button class="btn" type="submit" style="width: 100%;"> login</button>
+                    </div>
+                    <div class="clearfix text-center">
+                      <a class="forget-pass forgot" href="#"> Reset password?</a>
+                    </div>
+					<a href="#" target="_blank">
+                    <img src="https://univ.jnujaipur.ac.in/Content/assets/img/googleplay_badge.png" alt="">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://univ.jnujaipur.ac.in/Content/assets/img/apple_store.png" alt="">
+                </a>
+                  </div>
+                </FORM>
+            </div>
+				<div class="box-forgot">
+              
+				<form action="/account/ForgotPassword" method="POST" id="login-form" autocomplete="off" class="form-forgot login-form">
+                <fieldset>
+                  <div class="form-group">
+                    <label class="form-label" for="txtuserid">Enter User ID <span style="color:red">*</span>
+                    </label>
+                    <div class="input-group">
+                      <input type="text" name="txtuserid" class="input-box" placeholder="Enter your UserID" autocomplete="off" required>
+                      <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="password">Enter Official Email ID <span style="color:red">*</span>
+                    </label>
+                    <input type="text" name="txtemailid" class="input-box" placeholder="Enter your Email ID" required autocomplete="off">
+                  </div>
+				  
+                  <div class="form-actions">
+                    <a class="btn btn-light-grey go-back">
+                      <i class="fa fa-chevron-circle-left"></i> Log-In </a>
+                    <button id="btnSubmit" type="submit" class="btn btn-green pull-right"/> Next <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+				
+		 
+        </div>
+      </div>
+    </div>
+		
+<footer>
+			<div class="footer text-center">
+			  <div class="region region-imp-links">
+	  <div class="row">
+    <div class="col-sm-8">
+
+      <div class="logo-section">
+  <ul class="importantnav"><li>
+
+</li>
+<li><a href="" title="University Grants Commission"><img src="https://univ.jnujaipur.ac.in/loginpageContent/assets/img/1.PNG" alt="The Last of us" width="40%"></a></li>
+<li><a href="" title="University Grants Commission"><img src="https://univ.jnujaipur.ac.in/loginpageContent/assets/img/2.PNG" alt="The Last of us" width="40%"></a></li>
+<li><a href=""  title="Ministry of Education"><img src="https://univ.jnujaipur.ac.in/loginpageContent/assets/img/3.PNG" alt="The Last of us" width="40%"></a></li>
+<li><a href=""  title="SWAYAM"><img src="https://univ.jnujaipur.ac.in/loginpageContent/assets/img/4.PNG" alt="The Last of us" width="40%"></a></li>
+
+
+</ul-->
+
+</div>
+</div>
+    <div class="col-sm-4">
+<ul class="socialnav">
+<li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".1s" data-wow-offset="10"><a href="https://www.facebook.com/jaipurnationaluniv" data-bg-color="#3B5998"><i class="fa fa-facebook"></i></a></li>
+              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s" data-wow-offset="10"><a href="https://twitter.com/jaipurjnu" data-bg-color="#02B0E8"><i class="fa fa-twitter"></i></a></li>
+              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".3s" data-wow-offset="10"><a href="https://www.instagram.com/jnujaipuruniversity/" data-bg-color="#FF1493"><i class="fa fa-instagram"></i></a></li>
+              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".4s" data-wow-offset="10"><a href="https://www.youtube.com/channel/UC8KBt4ZO1h8mFoRGhROBb7A" data-bg-color="#A11312"><i class="fa fa-youtube-play"></i></a></li>
+              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".5s" data-wow-offset="10"><a href="https://www.linkedin.com/school/jaipurnationaluniversity/" data-bg-color="#C22E2A"><i class="fa fa-linkedin"></i></a></li>
+</div>
+
+  </div>
+	
+</div>   
+
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<p><span class="hidden-md-down fw-700">© 2022 <a href='https://www.sonetmicrosystems.com' class='text-primary fw-500' title='www.sonetmicrosystems.com' target='_blank'>Sonet Microsystems Pvt. Ltd.</a> All Rights Reserved</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	    </div>
+		
+    <!-- Authentication-related JS removed to avoid direct connections. -->
+	
+
+  </body>
+  
+</html>

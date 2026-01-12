@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Result</title>
+    <!-- Keep same external CSS references for consistent UI (if available) -->
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/bootstrap.css" type="text/css" rel="stylesheet">
+    
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/owl.carousel.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/animate.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/loader.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/global.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/main.css" media="all" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/style.css" type="text/css" rel="stylesheet">
+    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/responsive.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/font-awesome.min.css">
+    <style>
+      body.login {
+        background-image: url("https://univ.jnujaipur.ac.in/loginpageContent/assets/img/big/auth-bg2.jpg");
+        background-color: #def3ed;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .result-card {
+        max-width: 520px;
+        margin: 80px auto;
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        text-align: center;
+      }
+      .result-card h2 { margin-bottom: 12px; }
+      .result-card .desc { color: #666; }
+      .btn { display: inline-block; margin-top: 16px; padding: 10px 16px; background: #0050EF; color: #fff; border-radius: 4px; text-decoration: none; }
+      .btn:hover { background: #F0A30A; }
+    </style>
+  </head>
+  <body class="login">
+    <div class="result-card">
+      {% if ok %}
+        <h2>Login Successful</h2>
+        <p class="desc">Welcome, <strong>{{ user }}</strong>. This is a dummy success page.</p>
+      {% else %}
+        <h2>Login Failed</h2>
+        <p class="desc">Invalid credentials. This is a dummy failure page.</p>
+      {% endif %}
+      <a class="btn" href="/">Back to Login</a>
+    </div>
+  </body>
+</html>
