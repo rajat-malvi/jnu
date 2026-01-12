@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 # Simple in-memory users (no DB)
 USERS = {
-    "student1": {"password": "pass123", "name": "Student One"},
-    "admin": {"password": "admin123", "name": "Admin User"},
-    "rajat": {"password": "rajat", "name": "rajat"},
+    "student1": {"password": "pass123", "name": "Student One", "pdf_url": "https://www.w3.org/WAI/WCAG21/Techniques/pdf/img/table.pdf"},
+    "admin": {"password": "admin123", "name": "Admin User", "pdf_url": "https://www.w3.org/WAI/WCAG21/Techniques/pdf/img/table.pdf"},
+    "rajat": {"password": "rajat", "name": "rajat", "pdf_url": "https://www.orimi.com/pdf-test.pdf"},
 }
 
 @app.route("/")
@@ -32,8 +32,12 @@ def account_login():
 
 @app.route("/success")
 def success():
-    user = request.args.get("user", "")
-    return render_template("success.html", user=user, ok=True)
+    username = request.args.get("user", "")
+    pdf_url = ""
+    user_data = USERS.get(username)
+    if user_data:
+        pdf_url = user_data.get("pdf_url", "")
+    return render_template("success.html", user=username, pdf_url=pdf_url, ok=True)
 
 @app.route("/failed")
 def failed():
