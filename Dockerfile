@@ -4,6 +4,10 @@ FROM python:3.10-slim
 # Set working directory
 WORKDIR /app
 
+# Environment best practices
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
 # Copy requirements first for better caching
 COPY requirements.txt .
 
@@ -14,8 +18,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
 COPY templates/ templates/
 
-# Expose port
-EXPOSE 5000
+# Render listens on port 10000
+EXPOSE 10000
 
-# Run the application
-CMD ["python", "app.py"]
+# Run the application using Gunicorn (production server)
+CMD ["gunicorn", "--bind", "0.0.0.0:10000", "app:app"]
