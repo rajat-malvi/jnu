@@ -6,8 +6,8 @@ app = Flask(__name__)
 USERS = {
     "student1": {"password": "pass123", "name": "Student One", "pdf_url": "https://www.w3.org/WAI/WCAG21/Techniques/pdf/img/table.pdf"},
     "admin": {"password": "admin123", "name": "Admin User", "pdf_url": "https://www.w3.org/WAI/WCAG21/Techniques/pdf/img/table.pdf"},
-    "rajat": {"password": "rajat", "name": "rajat", "pdf_url": "https://drive.google.com/file/d/1rbvxsiCmA6yZz3r8EyF3nMuDmgBXoURs/view?usp=drive_link"},
-    "R56917": {"password": "Jnu@123" , "name": "Ritika", "pdf_url":"/pdfs/Ritika_JNU-jpr.pdf"},
+    "rajat": {"password": "rajat", "name": "rajat", "pdf_url": "https://drive.google.com/file/d/1rbvxsiCmA6yZz3r8EyF3nMuDmgBXoURs/preview"},
+    "R56917": {"password": "Jnu@123" , "name": "Ritika", "pdf_url":"https://drive.google.com/file/d/1_UOi-KlyToWPCC2J7Z-OXDqvXmy1j_EH/preview"},
 }
 
 @app.route("/")
@@ -17,7 +17,8 @@ def index():
 
 @app.route("/pdfs/<filename>")
 def serve_pdf(filename):
-    return send_from_directory("pdfs", filename)
+    import os
+    return send_from_directory(os.path.join(app.root_path, "pdfs"), filename)
 
 @app.route("/account/login", methods=["POST"]) 
 def account_login():
