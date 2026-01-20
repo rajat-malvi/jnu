@@ -7,7 +7,7 @@ USERS = {
     "student1": {"password": "pass123", "name": "Student One", "pdf_url": "https://www.w3.org/WAI/WCAG21/Techniques/pdf/img/table.pdf"},
     "admin": {"password": "admin123", "name": "Admin User", "pdf_url": "https://www.w3.org/WAI/WCAG21/Techniques/pdf/img/table.pdf"},
     "rajat": {"password": "rajat", "name": "rajat", "pdf_url": "https://drive.google.com/file/d/1rbvxsiCmA6yZz3r8EyF3nMuDmgBXoURs/preview"},
-    "R56917": {"password": "Jnu@123" , "name": "Ritika", "pdf_url":"https://drive.google.com/file/d/1_UOi-KlyToWPCC2J7Z-OXDqvXmy1j_EH/preview"},
+    "R56917": {"password": "Jnu@123" , "name": "Ritika", "pdf_url":"https://drive.google.com/file/d/1iMXJggvhp2ZmnqxF7LZu5SBwV7KM1Qd2/preview"},
 }
 
 @app.route("/")

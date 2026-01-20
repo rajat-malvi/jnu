@@ -3,95 +3,393 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Result</title>
-    <!-- Keep same external CSS references for consistent UI (if available) -->
+    <title>Student Dashboard</title>
     <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/bootstrap.css" type="text/css" rel="stylesheet">
-    
-    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/owl.carousel.css" type="text/css" rel="stylesheet">
-    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/animate.css" type="text/css" rel="stylesheet">
-    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/loader.css" type="text/css" rel="stylesheet">
-    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/global.css" type="text/css" rel="stylesheet">
-    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/main.css" media="all" rel="stylesheet">
-    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/style.css" type="text/css" rel="stylesheet">
-    <link href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/responsive.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://univ.jnujaipur.ac.in/loginpageContent/assets/css/font-awesome.min.css">
     <style>
-      body.login {
-        background-image: url("https://univ.jnujaipur.ac.in/loginpageContent/assets/img/big/auth-bg2.jpg");
-        background-color: #def3ed;
-        background-size: cover;
-        background-repeat: no-repeat;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .result-card {
-        max-width: 900px;
-        margin: 40px auto;
-        background: #fff;
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background-color: #e8f0f5;
+        color: #333;
+      }
+      
+      /* Header */
+      .header {
+        background-color: #fff;
+        padding: 12px 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header .menu-btn {
+        background-color: #ff1493;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .header .user-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+      }
+      
+      /* Main Container */
+      .container-fluid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      
+      /* Breadcrumb */
+      .breadcrumb-section {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+      .breadcrumb-section span {
+        color: #999;
+      }
+      
+      /* Dashboard Title */
+      .dashboard-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        color: #999;
+        font-size: 14px;
+      }
+      .dashboard-title i {
+        margin-right: 8px;
+      }
+      .date-display {
+        text-align: right;
+        color: #666;
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+      
+      /* Pending Tasks Banner */
+      .pending-tasks {
+        background: linear-gradient(135deg, #f5a623 0%, #f7b955 100%);
+        color: white;
+        padding: 15px 20px;
         border-radius: 8px;
-        padding: 24px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(245, 166, 35, 0.3);
       }
-      .result-card h2 { margin-bottom: 12px; text-align: center; }
-      .result-card .desc { color: #666; text-align: center; }
-      .btn { display: inline-block; margin-top: 16px; padding: 10px 16px; background: #0050EF; color: #fff; border-radius: 4px; text-decoration: none; }
-      .btn:hover { background: #F0A30A; }
-      .pdf-container {
-        margin-top: 24px;
-        border-top: 1px solid #eee;
-        padding-top: 24px;
+      .pending-tasks h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+        font-weight: 600;
+      }
+      .pending-tasks p {
+        font-size: 13px;
+        opacity: 0.95;
+      }
+      .pending-tasks i {
+        font-size: 20px;
+      }
+      
+      /* Action Cards Grid */
+      .action-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+      .action-card {
+        background-color: white;
+        padding: 25px 15px;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        border: 2px solid transparent;
+        position: relative;
+      }
+      .action-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        border: 2px solid #17a2b8;
+      }
+      .action-card:hover h4 {
+        opacity: 0.8;
+      }
+      .action-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(23, 162, 184, 0.05) 0%, rgba(32, 201, 151, 0.05) 100%);
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+      .action-card:hover::after {
+        opacity: 1;
+      }
+      /* Active Tab Styling */
+      .action-card.active {
+        background: linear-gradient(135deg, #e8f5f7 0%, #f0f8fa 100%);
+        border: 2px solid #17a2b8;
+        box-shadow: 0 4px 12px rgba(23, 162, 184, 0.15);
+        position: relative;
+      }
+      .action-card.active::before {
+        content: 'Active Tab';
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #17a2b8;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      .action-card.blue.active { color: #5b9bd5; }
+      .action-card.gray.active { color: #7f7f7f; }
+      .action-card.orange.active { color: #f5a623; }
+      .action-card.light-blue.active { color: #70c1e0; }
+      .action-card.olive.active { color: #a4b967; }
+      
+      /* PDF Viewer Section */
+      .pdf-section {
+        background: linear-gradient(135deg, #e8f5f7 0%, #f0f8fa 100%);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(23, 162, 184, 0.15);
+        margin-bottom: 20px;
+        border: 2px solid #17a2b8;
+        position: relative;
+      }
+      .pdf-section::before {
+        content: 'Active Tab';
+        position: absolute;
+        top: -12px;
+        left: 20px;
+        background-color: #17a2b8;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+      .pdf-section-header {
+        background: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 4px;
+        margin: -20px -20px 20px -20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(23, 162, 184, 0.2);
+      }
+      .pdf-section-header h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0;
+      }
+      .pdf-section-header .toggle-btn {
+        background-color: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .pdf-viewer {
         width: 100%;
-        height: 600px;
-        border: 1px solid #ddd;
+        height: 700px;
+        border: 1px solid #e0e0e0;
         border-radius: 4px;
+        background-color: #f5f5f5;
       }
-      .pdf-download {
-        display: inline-block;
-        margin-top: 16px;
-        padding: 10px 16px;
-        background: #28a745;
-        color: #fff;
-        border-radius: 4px;
-        text-decoration: none;
-      }
-      .pdf-download:hover {
-        background: #218838;
-      }
-      .action-buttons {
+      .no-pdf {
         text-align: center;
+        padding: 40px;
+        color: #999;
+        font-size: 14px;
       }
-      .desc{
-        color: #333;
-        font-size: large;
+      
+      /* Back Button */
+      .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.2s;
+      }
+      .back-button:hover {
+        background-color: #5a6268;
+        text-decoration: none;
+        color: white;
+      }
+      
+      /* Failed Login */
+      .failed-login {
+        max-width: 500px;
+        margin: 100px auto;
+        background-color: white;
+        padding: 40px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+      .failed-login h2 {
+        color: #dc3545;
+        margin-bottom: 15px;
+      }
+      .failed-login p {
+        color: #666;
+        margin-bottom: 20px;
       }
     </style>
   </head>
-  <body class="login">
-    <div class="result-card">
-      {% if ok %}
-        <h2>Login Successful</h2>
-        <p class="desc">Welcome, <strong>{{ user }}</strong>!</p>
-        
-        {% if pdf_url %}
-        <div class="pdf-container">
-          <h3>Your Document</h3>
-          <iframe src="{{ pdf_url }}" class="pdf-viewer"></iframe>
-          <div class="action-buttons">
-            <a href="{{ pdf_url }}" download class="pdf-download" target="_blank">
-              <i class="fa fa-download"></i> Download PDF
-            </a>
-          </div>
-        </div>
-        {% endif %}
-        
-        <div class="action-buttons" style="margin-top: 24px;">
-          <a class="btn" href="/">Back to Login</a>
-        </div>
-      {% else %}
-        <h2>Login Failed</h2>
-        <p class="desc">Invalid credentials. Please try again.</p>
-        <a class="btn" href="/">Back to Login</a>
-      {% endif %}
+  <body>
+    {% if ok %}
+    <!-- Header -->
+    <div class="header">
+      <button class="menu-btn">
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="user-name">{{ user }}</div>
     </div>
+    
+    <!-- Main Content -->
+    <div class="container-fluid">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb-section">
+        Dashboard / <span>Student...</span>
+      </div>
+      
+      <!-- Date -->
+      <div class="date-display">
+        Tuesday, January 20, 2026
+      </div>
+      
+      <!-- Dashboard Title -->
+      <div class="dashboard-title">
+        <i class="fa fa-dashboard"></i>
+        <span>Student Dashboard</span>
+      </div>
+      
+      <!-- Pending Tasks Banner -->
+      <div class="pending-tasks">
+        <div>
+          <h3>Pending Tasks</h3>
+          <p>0 Pending document for submission</p>
+        </div>
+        <i class="fa fa-pencil-square-o"></i>
+      </div>
+      
+      <!-- Action Cards -->
+      <div class="action-cards">
+        <div class="action-card blue">
+          <h4>NOTICE</h4>
+        </div>
+        <div class="action-card gray">
+          <h4>PAY FEE<br>ONLINE</h4>
+        </div>
+        <div class="action-card orange">
+          <h4>BACK PAPER<br>REGISTRATION RE-<br>EVALUATION</h4>
+        </div>
+        <div class="action-card light-blue">
+          <h4>ATTENDANCE</h4>
+        </div>
+        <div class="action-card olive">
+          <h4>EXAM RESULT</h4>
+        </div>
+      </div>
+      
+      <!-- PDF Viewer Section (replacing My Schedule) -->
+      {% if pdf_url %}
+      <div class="pdf-section" id="pdf-section">
+        <div class="pdf-section-header">
+          <h3>EXAM RESULT</h3>
+          <button class="toggle-btn">
+            <i class="fa fa-circle"></i>
+          </button>
+        </div>
+        <iframe src="{{ pdf_url }}" class="pdf-viewer"></iframe>
+      </div>
+      {% else %}
+      <div class="pdf-section" id="pdf-section">
+        <div class="pdf-section-header">
+          <h3>EXAM RESULT</h3>
+          <button class="toggle-btn">
+            <i class="fa fa-circle"></i>
+          </button>
+        </div>
+        <div class="no-pdf">
+          <p>No document available</p>
+        </div>
+      </div>
+      {% endif %}
+      
+      <a href="/" class="back-button">
+        <i class="fa fa-arrow-left"></i> Back to Login
+      </a>
+    </div>
+    
+    <script>
+      // Initialize EXAM RESULT tab as active on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        const examResultCard = document.querySelector('.action-card.olive');
+        if (examResultCard) {
+          examResultCard.classList.add('active');
+        }
+      });
+      
+      // Tab switching functionality
+      document.querySelectorAll('.action-card').forEach(card => {
+        card.addEventListener('click', function() {
+          // Remove active class from all cards
+          document.querySelectorAll('.action-card').forEach(c => {
+            c.classList.remove('active');
+          });
+          // Add active class to clicked card
+          this.classList.add('active');
+        });
+      });
+    </script>
+    
+    {% else %}
+    <!-- Failed Login -->
+    <div class="failed-login">
+      <h2><i class="fa fa-times-circle"></i> Login Failed</h2>
+      <p>Invalid credentials. Please try again.</p>
+      <a href="/" class="back-button">
+        <i class="fa fa-arrow-left"></i> Back to Login
+      </a>
+    </div>
+    {% endif %}
   </body>
 </html>
